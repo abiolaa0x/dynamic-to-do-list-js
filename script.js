@@ -6,27 +6,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to add a new task
   function addTask() {
-      const taskText = taskInput.value.trim();
-      
-      if (taskText === "") {
-        alert("Enter a task!");
-        
-      } else {
-          const li = document.createElement("li");
-          li.textContent = taskText;
+    const taskText = taskInput.value.trim();
 
-          const removeBtn = document.createElement("button");
-          removeBtn.textContent = "Remove";
-          removeBtn.className = "remove-btn";
+    if (taskText === "") {
+      alert("Enter a task!");
+    } else {
+      const li = document.createElement("li");
+      li.textContent = taskText;
 
-          removeBtn.onclick = function () {
-            taskList.removeChild(li);
-          };
+      const removeBtn = document.createElement("button");
+      removeBtn.textContent = "Remove";
+      removeBtn.className = "remove-btn";
 
-          li.appendChild(removeBtn);
-          taskList.appendChild(li);
+      removeBtn.onclick = function () {
+        taskList.removeChild(li);
+      };
 
-          taskInput.value = "";
+      li.appendChild(removeBtn);
+      taskList.appendChild(li);
+
+      taskInput.value = "";
     }
   }
 
