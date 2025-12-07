@@ -10,23 +10,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (taskText === "") {
       alert("Enter a task!");
-    } else {
-      const li = document.createElement("li");
-      li.textContent = taskText;
-
-      const removeBtn = document.createElement("button");
-      removeBtn.textContent = "Remove";
-      removeBtn.className = "remove-btn";
-
-      removeBtn.onclick = function () {
-        taskList.removeChild(li);
-      };
-
-      li.appendChild(removeBtn);
-      taskList.appendChild(li);
-
-      taskInput.value = "";
     }
+
+    const li = document.createElement("li");
+    li.textContent = taskText;
+
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.className = "remove-btn";
+
+    removeBtn.onclick = function () {
+      taskList.removeChild(li);
+    };
+
+    li.appendChild(removeBtn);
+    taskList.appendChild(li);
+
+    taskInput.value = "";
   }
 
   addButton.addEventListener("click", addTask);
